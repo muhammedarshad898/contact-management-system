@@ -12,7 +12,7 @@ function View() {
   console.log(detail)
 
   const getdetail=async()=>{
-    const response=await fetch(`http://localhost:4000/contacts/${id}`)
+    const response=await fetch(`https://cm-server2.onrender.com/contacts/${id}`)
     const result=await response.json()
     setdetail(result)
   }
@@ -33,7 +33,7 @@ function View() {
     <div className='container mt-5'>
       <div>
         <Row className='align-items-center'>
-          <Col md={4}><img src={detail?.imageurl} className='img-fluid' alt=""style={{height:"300px"}} /></Col>
+          <Col md={4}><img src={detail?.imageurl} className='img-fluid' alt=""style={{height:"300px",width:"100%"}} /></Col>
           <Col md={8}>
           <ul className='list-group w-50 mt-3' style={{border:"unset"}}>
             <li className='list-group-item list-group-action'style={{border:"unset", fontSize:"20px"}}>Name : <span>{detail?.fullname}</span></li>
